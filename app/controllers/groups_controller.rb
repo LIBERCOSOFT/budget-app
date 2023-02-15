@@ -19,5 +19,9 @@ class GroupsController < ApplicationController
 
   def show
     @budgets = Budget.where(group_id: params[:id])
+    @total_price = 0
+    @budgets.each do |budget|
+      @total_price += budget.amount
+    end
   end
 end
