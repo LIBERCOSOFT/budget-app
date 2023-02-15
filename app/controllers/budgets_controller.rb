@@ -13,5 +13,7 @@ class BudgetsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @budgets = Budget.where(author_id: current_user.id)
+  end
 end
