@@ -12,5 +12,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @groups = Group.where(author_id: current_user.id)
+  end
 end
