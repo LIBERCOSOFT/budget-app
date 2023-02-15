@@ -14,5 +14,10 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.where(author_id: current_user.id)
+    @budgets = Budget.all
+  end
+
+  def show
+    @budgets = Budget.where(group_id: params[:id])
   end
 end

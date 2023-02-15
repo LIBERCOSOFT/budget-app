@@ -14,6 +14,6 @@ class BudgetsController < ApplicationController
   end
 
   def index
-    @budgets = Budget.where(author_id: current_user.id)
+    @budgets = Budget.where(author_id: current_user.id).order('created_at DESC')
   end
 end
