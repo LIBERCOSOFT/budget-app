@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot");
+@import url("https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot");

@@ -1,12 +1,21 @@
-<h2>Categories</h2>
+<div class="bg-main text-white text-center p-4">
+  <h2 class="text-2xl font-bold">All Categories</h2>
+</div>
 <% @groups.each do |group| %>
   <% total_price = 0 %>
   <% @budgets.each do |budget| %>
       <% total_price += budget.amount if budget.group_id == group.id %>
   <% end %>
-  <div>
-    <%= image_tag "#{group.icon}" %>
-    <h2> <%= link_to group.name, group_path(group.id) %> </h2>
-    <p>Total price: <%= total_price %></p>
+  <div class="grid grid-cols-3 my-4 mx-auto w-3/4 p-4 bg-zinc-100">
+    <%= image_tag "#{group.icon}", class: "w-16 h-16 my-0 mx-auto" %>
+    <div class="my-auto mx-auto">
+    <h2 class="text-2xl"> <%= link_to group.name, group_path(group.id) %> </h2>
+    <p class="mt-4"><%= group.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    <p class="my-auto mx-auto">$<%= total_price %></p>
   </div>
 <% end %>
+
+<div class="w-1/2 text-center my-8 mx-auto">
+  <%= link_to 'Add a new category', new_group_path, class: "bg-secondary text-white text-2xl p-4" %>
+</div>

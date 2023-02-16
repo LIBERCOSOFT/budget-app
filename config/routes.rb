@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "root#index"
   devise_for :users, controllers: { registrations: "registrations" }
   resources :groups, only: [:new, :create, :index, :show]
-  resources :budgets, only: [:new, :create, :index]
+  resources :budgets, only: [:new, :create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
