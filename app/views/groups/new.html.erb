@@ -1,7 +1,7 @@
 <div class="bg-main flex justify-center p-4">
-<%= link_to '<', groups_path, class: "justify-self-start text-white text-2xl" %>
-<h2 class="text-white text-2xl my-0 mx-auto">Create a new category</h2>
-<input type="submit" value="Create Category" form="new_group" class="text-white">
+<%= link_to '<', groups_path, class: "justify-self-start text-white text-2xl font-black" %>
+<h2 class="text-white text-2xl my-0 mx-auto">Create Category</h2>
+<input type="submit" value="Save" form="new_group" class="text-white">
 </div>
 
 <%= form_with model: @group, id: 'new_group', class: 'flex flex-col items-center mt-2', url: groups_path do |form| %>

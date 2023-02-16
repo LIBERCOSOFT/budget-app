@@ -1,19 +1,18 @@
-<h1>Create a new budget</h1>
+<div class="bg-main flex justify-center p-4">
+<%= link_to '<', groups_path, class: "justify-self-start text-white text-2xl font-black" %>
+<h2 class="text-white text-2xl my-0 mx-auto">Create Transaction</h2>
+<input type="submit" value="Save" form="new_transaction" class="text-white">
+</div>
 
-<%= form_with model: @budget, url: budgets_path do |form| %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+<%= form_with model: @budget,  id: 'new_transaction', class: 'flex flex-col items-center mt-2', url: budgets_path do |form| %>
+  <div class="w-3/5 mb-2">
+    <%= form.text_field :name, placeholder: 'Name', class: 'w-full' %>
   </div>
-  <div>
-    <%= form.label :amount %><br>
-    <%= form.number_field :amount, in: 1.0..99999999.0 %>
+  <div class="w-3/5 mb-2">
+    <%= form.number_field :amount, in: 1.0..99999999.0, placeholder: 'Amount', class: 'w-full' %>
   </div>
-  <div>
+  <div class="w-3/5 mb-2 text-text">
     <%= form.label :category %><br>
-    <%= form.select :group_id, (@categories.map{|category| [category.name, category.id]}) %>
-  </div>
-  <div>
-    <%= form.submit "Create Post" %>
+    <%= form.select :group_id, (@categories.map{|category| [category.name, category.id]}),{},{:class => 'w-full'} %>
   </div>
 <% end %>
