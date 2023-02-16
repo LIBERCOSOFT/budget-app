@@ -12,9 +12,11 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"btn btn-danger" %>
-  <%end%> 
+  <div class="flex justify-end">
+    <% if user_signed_in? %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"bg-red-600 text-white p-2" %>
+    <%end%> 
+  </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
