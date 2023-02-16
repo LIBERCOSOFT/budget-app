@@ -7,7 +7,7 @@ class BudgetsController < ApplicationController
   def create
     new_budget = Budget.new(name: params[:budget][:name], amount: params[:budget][:amount], group_id: params[:budget][:group_id], author: current_user)
     if new_budget.save
-      redirect_to budgets_path
+      redirect_to group_path(params[:budget][:group_id])
     else
       render :new
     end
