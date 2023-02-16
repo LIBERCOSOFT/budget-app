@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'groups/new'
-  get 'groups/index'
-  get 'budgets/new'
-  get 'budgets/index'
-  devise_for :users
+  root to: "root#index"
+  devise_for :users, controllers: { registrations: "registrations" }
+  resources :groups, only: [:new, :create, :index, :show]
+  resources :budgets, only: [:new, :create, :index]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
 end

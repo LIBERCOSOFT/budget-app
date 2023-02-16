@@ -1,2 +1,12 @@
-<h1>Groups#index</h1>
-<p>Find me in app/views/groups/index.html.erb</p>
+<h2>Categories</h2>
+<% @groups.each do |group| %>
+  <% total_price = 0 %>
+  <% @budgets.each do |budget| %>
+      <% total_price += budget.amount if budget.group_id == group.id %>
+  <% end %>
+  <div>
+    <%= image_tag "#{group.icon}" %>
+    <h2> <%= link_to group.name, group_path(group.id) %> </h2>
+    <p>Total price: <%= total_price %></p>
+  </div>
+<% end %>
