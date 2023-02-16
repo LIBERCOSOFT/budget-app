@@ -12,8 +12,4 @@ class BudgetsController < ApplicationController
       render :new
     end
   end
-
-  def index
-    @budgets = Budget.where(author_id: current_user.id).order('created_at DESC')
-  end
 end

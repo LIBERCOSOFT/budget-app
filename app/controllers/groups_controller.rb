@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @budgets = Budget.where(group_id: params[:id])
+    @budgets = Budget.where(group_id: params[:id]).order('created_at DESC')
     @total_price = 0
     @budgets.each do |budget|
       @total_price += budget.amount
