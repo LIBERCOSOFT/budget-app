@@ -5,7 +5,7 @@ class CreateBudgets < ActiveRecord::Migration[7.0]
       t.integer :amount
       t.references :author, null: false, foreign_key: { to_table: :users }
 
-      t.timestamps
+      t.timestamps,
       updatedAt: false,
     end
   end
