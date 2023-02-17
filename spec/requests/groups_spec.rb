@@ -1,27 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups', type: :request do
-  # describe 'GET groups_path' do
-  #   include Devise::Test::IntegrationHelpers
+  describe 'GET groups_path' do
+    include Devise::Test::IntegrationHelpers
 
-  #   let(:user) { User.create(name: 'Tom', email: 'tom@email.com', password: 'password') }
-  #   before do
-  #     sign_in user
-  #     get groups_path
-  #   end
+    let(:user) { User.create(name: 'Tom', email: 'tom@email.com', password: 'password') }
+    before do
+      sign_in user
+      get groups_path
+    end
 
-  #   it 'Should return 200 status code' do
-  #     expect(response).to have_http_status(200)
-  #   end
+    it 'Should return 200 status code' do
+      expect(response).to have_http_status(200)
+    end
 
-  #   it 'Should render the correct template' do
-  #     expect(response).to render_template(:index)
-  #   end
+    it 'Should render the correct template' do
+      expect(response).to render_template(:index)
+    end
 
-  #   it 'should render the correct text in the template' do
-  #     expect(response.body).to include 'All Categories'
-  #   end
-  # end
+    it 'should render the correct text in the template' do
+      expect(response.body).to include 'All Categories'
+    end
+  end
 
   describe 'GET group_path' do
     include Devise::Test::IntegrationHelpers
