@@ -15,7 +15,7 @@
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [📝 License ](#-license-)
-  - [🙏 Acknowledgments \</a](#-acknowledgments-a)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -158,7 +158,7 @@ This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🙏 Acknowledgments <a name="acknowledgements"></a
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - [Gregoire Vella](https://www.behance.net/gregoirevella)
 - [Microverse](https://www.microverse.org/)
