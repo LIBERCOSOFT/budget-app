@@ -1,5 +1,7 @@
 <div class="bg-main flex justify-center p-4">
-<%= link_to '<', groups_path, class: "justify-self-start text-white text-2xl font-black" %>
+<%= link_to groups_path, class: "justify-self-start text-white text-2xl font-black" do %>
+  <i class="fa-solid fa-arrow-left"></i>
+<% end %>
 <h2 class="text-white text-2xl my-0 mx-auto">Create Category</h2>
 <input type="submit" value="Save" form="new_group" class="text-white">
 </div>
