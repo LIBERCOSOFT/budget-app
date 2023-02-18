@@ -1,0 +1,21 @@
+<div class="bg-main flex justify-center p-4">
+<%= link_to groups_path, class: "justify-self-start text-white text-2xl font-black" do %>
+  <i class="fa-solid fa-arrow-left"></i>
+<% end %>
+<h2 class="text-white text-2xl my-0 mx-auto">TRANSACTIONS</h2>
+</div>
+<div class="flex justify-between m-4">
+<p class="text-xl">Total Price: </p>
+<p><b>$<%= @total_price.round(2) %></b></p>
+</div>
+
+<% @budgets.each do |budget| %>
+  <div class="flex justify-between items-center p-4 bg-zinc-100 mb-4">
+    <h3 class="mr-4 text-lg"><%= budget.name %></h3>
+    <p>$<%= budget.amount %></p>
+  </div>
+<% end %>
+
+<div class="text-center bg-secondary p-5">
+  <%= link_to 'Add a new transaction', new_budget_path, class: "bg-secondary text-white p-3 border-2 border-white text-lg md:text-xl" %>
+</div>

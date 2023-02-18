@@ -1,0 +1,25 @@
+<div class="bg-main text-white text-center p-4 flex justify-center items-center">
+  <i class="fa-solid fa-bars text-xl"></i>
+  <h2 class="text-2xl font-bold my-0 mx-auto">All Categories</h2>
+  <%= button_to destroy_user_session_path, method: :delete, form: {  data: { turbo: :false } }, class:"text-white p-2 font-600" do %>
+    <i class="fa-solid fa-right-from-bracket text-xl"></i>
+  <%end%>
+</div>
+<% @groups.each do |group| %>
+  <% total_price = 0 %>
+  <% @budgets.each do |budget| %>
+      <% total_price += budget.amount if budget.group_id == group.id %>
+  <% end %>
+  <div class="grid grid-cols-3 my-4 mx-auto w-3/4 p-4 bg-zinc-100">
+    <%= image_tag "#{group.icon}", class: "w-14 h-14 my-0 mx-auto" %>
+    <div class="my-auto mx-auto">
+    <h2 class="text-xl text-main"> <%= link_to group.name, group_path(group.id) %> </h2>
+    <p class="text-xs mt-4"><%= group.created_at.strftime("%d %b %Y") %></p>
+    </div>
+    <p class="my-auto mx-auto">$<%= total_price %></p>
+  </div>
+<% end %>
+
+<div class="text-center bg-secondary p-5">
+  <%= link_to 'Add a new category', new_group_path, class: "bg-secondary text-white text-lg p-3 border-2 border-white md:text-xl " %>
+</div>
