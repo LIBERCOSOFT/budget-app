@@ -46,6 +46,8 @@ gem 'devise'
 
 gem 'tailwindcss-rails'
 
+gem 'font-awesome-sass', '~> 6.3.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
