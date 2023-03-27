@@ -53,7 +53,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link](https://budget-app-9ny9.onrender.com/)
+[Live Demo Link](https://budget-app-production-3559.up.railway.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
